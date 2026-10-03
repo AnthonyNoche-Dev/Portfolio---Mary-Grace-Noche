@@ -23,28 +23,16 @@
   --c-navy:  #274D60;
 
   /* Light theme (default) */
-  --bg:     #eef5f5;
+  --bg:     #f3f9fa;
   --card:   #ffffff;
-  --line:   #cfe0e2;
+  --line:   #d3e4e8;
   --ink:    #031716;
-  --mute:   #3f5e66;
+  --mute:   #456a74;
   --accent: #0A7075;     /* labels, links, quote bar */
   --header: #032F30;     /* solid header/footer/pill fills */
 
   /* Typography */
   --font: 'Plus Jakarta Sans', system-ui, sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme=light]) {
-    --bg:     #031716;
-    --card:   #032F30;
-    --line:   #274D60;
-    --ink:    #e8f3f4;
-    --mute:   #9fbcc6;
-    --accent: #0C969C;
-    --header: #274D60;
-  }
 }
 
 
@@ -80,20 +68,15 @@ h1, h2, h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 1.1rem 5vw;
+  padding: .8rem max(5vw, calc((100vw - 1160px) / 2));
+  background: rgba(3, 23, 22, .92);   /* stays visible over every section */
+  backdrop-filter: blur(10px);
   color: #fff;
-  transition: background .3s, backdrop-filter .3s;
+  transition: box-shadow .3s;
 }
 
 /* Added by script.js after scrolling */
-.nav.scrolled {
-  max-width: none;
-  padding: .7rem max(5vw, calc((100vw - 1160px) / 2));
-  background: rgba(3, 23, 22, .9);
-  backdrop-filter: blur(10px);
-}
+.nav.scrolled { box-shadow: 0 4px 24px rgba(3, 23, 22, .35); }
 
 .brand {
   display: flex;
